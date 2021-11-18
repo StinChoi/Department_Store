@@ -1,15 +1,15 @@
 class StoresController < ApplicationController
-# before_action :set_sub, only: [:show, :edit, :update, :destroy]
+before_action :set_store, only:[:show, :edit, :update, :destroy]
 
 # (C) - get request '/stores/'
   def index
-    # stores = Stores.all
-    render component: "Stores", props:{ stores: Stores.all }
+    # Should show all department stores / allows you to make new, view, edit and delete stores
+    @stores = Store.all
+    render component: "Stores", props: { stores: Store.all }
   end
 
   # (R) get request to 'stores/new'
   def new
-    # TODO return form to create a new stores
     render component: "NewStore"
   end
 
@@ -29,27 +29,30 @@ end
   # (U)
   # get '/stores/id'
   def show
-    # display a specific sub 
-    render component: "Store", props: { store:@store }
+    # display a specific store
+    render component: "Store", props: { store: @store }
   end
 
   # get stores 'stores/:id/edit'
   def edit
     # TODO: return form for editing user
-    render component: "EditStore", props: { store:@store }
+    render component: "EditStore", props: { store: @store }
   end
 
   # put/patch '/stores/:id'
   def update
     # TODO updating stores
+    @store.update(params.require(:store).permit(:name))
+    redirect_to stores_path
   end
+  
   # (D)
   # delete 'stores/:id'
   def destroy
     # TODO: deleting a specific store
     # store = Store.find(params[:id])
     @store.destroy
-    redirect_to subs_path
+    redirect_to stores_path
   end
 
 end

@@ -11,4 +11,5 @@ Store.destroy_all
 Store.create(name: 'Nordstrom')
 Store.create(name: 'Target')
 Store.create(name: 'JCPenny')
-Store.create(name: 'Macy's)
+Store.create(name: 'Macys')
+

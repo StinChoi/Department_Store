@@ -1,15 +1,15 @@
 import React from "react"
 
-const NewStore = (props) => {
+const NewStore = () => {
   return (
     <div>
-      <p>New Store form here</p>
-      <a href="/">Home</a>
-      <a href="/stores">Back to Stores</a>
+      <h3>New Store Form</h3>
+      <a href="/stores">Homepage</a>
+      <p>Please enter a new Department Store</p>
       <form action="/stores" method="post">
-        <p>Name</p>
-        <input name="store[name]" />
-        <button type="submit">Add Store</button>
+        <p>Store Name:</p>
+        <input name="store[name]" placeholder="Enter New Store Name" />
+        <button type="submit">Add</button>
       </form>
     </div>
   );
