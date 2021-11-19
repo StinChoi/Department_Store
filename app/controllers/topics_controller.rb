@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_store
-  before_action :set_item, only:[:show, :update, :edit, :destroy]
+  before_action :set_topic, only:[:show, :update, :edit, :destroy]
 
   # Showing all items in a store (visit - seed)
   def index
@@ -8,17 +8,17 @@ class TopicsController < ApplicationController
   end
 
   def new
-    render component: "TopicNew", props: { store: @store, topics: @topics }
+    render component: "TopicNew", props: { store: @store, topic: @topic }
   end
 
   def create 
-    @store.topics.create(name: params[:topics][:name], body: params[:topics])
-    redirect_to [@store,@topics]
+    @store.topics.create(name: params[:topic][:name], body: params[:topic])
+    redirect_to [@store,@topic]
   end
   
   def show
     # display a specific store
-    render component: "Topics", props: { store: @store, topic: @topic }
+    render component: "Topic", props: { store: @store, topic: @topic }
   end
 
   def edit

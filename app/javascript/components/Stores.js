@@ -43,7 +43,7 @@ const Stores = (props) => {
           <br></br>
           <a href={`/stores/${store.id}`} data-method="delete">Delete Store</a>
           <br></br>
-          <a href={`/stores/${store.id}/items`}>View Items</a>
+          <a href={`/stores/${store.id}/topics`}>View Items</a>
         </div>
       );
     });

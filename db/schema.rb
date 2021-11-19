@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2021_11_19_025354) do
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.bigint "stores_id", null: false
+    t.bigint "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["stores_id"], name: "index_topics_on_stores_id"
+    t.index ["store_id"], name: "index_topics_on_store_id"
   end
 
-  add_foreign_key "topics", "stores", column: "stores_id"
+  add_foreign_key "topics", "stores"
 end

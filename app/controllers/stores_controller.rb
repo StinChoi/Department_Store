@@ -26,7 +26,7 @@ before_action :set_store, only:[:show, :edit, :update, :destroy]
   # get '/stores/id'
   def show
     # display a specific store
-    render component: "Store", props: { store: @store }
+    render component: "Store", props: { store: @store, topics: @store.topics }
   end
 
   # get stores 'stores/:id/edit'
@@ -53,5 +53,5 @@ before_action :set_store, only:[:show, :edit, :update, :destroy]
   def set_store
     @store = Store.find(params[:id])
   end
-  
+
 end

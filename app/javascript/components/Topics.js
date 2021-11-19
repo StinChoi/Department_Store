@@ -1,16 +1,16 @@
 import React from "react";
 
-const Items = (props) => {
+const Topics = (props) => {
   const renderTopics = () => {
-    return props.topics.map((item) => {
+    return props.topics.map((topic) => {
       return (
         <div>
           <h4>{topic.name}</h4>
-          <a href={`/stores/${props.store.id}/topics/${topics.id}`}>View Items</a>
+          <a href={`/stores/${props.store.id}/topics/${topic.id}`}>View Items</a>
           <br></br>
-          <a href={`/stores/${props.store.id}/topics/${topics.id}/edit`}>Edit Items</a>
+          <a href={`/stores/${props.store.id}/topics/${topic.id}/edit`}>Edit Items</a>
           <br></br>
-          <a href={`/stores/${props.store.id}/topics/${topics.id}`} data-method="delete">Delete Item</a>
+          <a href={`/stores/${props.store.id}/topics/${topic.id}`} data-method="delete">Delete Item</a>
         </div>
       );
     });

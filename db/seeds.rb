@@ -9,7 +9,7 @@
 require 'faker'
 
 # Item.destroy_all = messed up on intial set up following 11/17/21 lecture - Topics is an alias for items :)
-# Topic.destroy_all
+Topic.destroy_all
 Store.destroy_all
 
 strom = Store.create(name: 'Nordstrom')
