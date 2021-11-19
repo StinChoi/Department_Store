@@ -20,7 +20,7 @@ const Topics = (props) => {
       <h1>Welcome to the {props.store.name} ! </h1>
       <a href="/stores">Back to Stores</a>
       <br></br>
-      <a href={`/stores/${props.stores.id}/topics/new`}>Create a new item</a>
+      <a href={`/stores/${props.store.id}/topics/new`}>Create a new item</a>
       <p>{renderTopics()}</p>
     </div>
   );

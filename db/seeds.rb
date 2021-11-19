@@ -20,8 +20,8 @@ sco = Store.create(name: 'Costco')
 # # Making 4 random "faker" items for each store
 3.times do
   name1 = Faker::Hipster.words
-  name2 = Faker::Hipster.sentences
-  topic_name = "#{name1} #{name2}"
+  # name2 = Faker::Hipster.sentences
+  topic_name = "#{name1}"
   topic = strom.topics.create(
     name: topic_name
   )
@@ -37,8 +37,8 @@ end
 
   3.times do
     name1 = Faker::Relationship.familial
-    name2 = Faker::Hipster.sentences
-    topic_name = "#{name1}#{name2}"
+    # name2 = Faker::Hipster.sentences
+    topic_name = "#{name1}"
     topic = cees.topics.create(
       name: topic_name
     )

@@ -16,8 +16,6 @@ const Store = (props) => {
       <h1>{props.store.name}</h1>
       <a href={`/stores/${props.store.id}/edit`}>Edit this Department Store</a>
       <br></br>
-      <a href={`/stores/${props.store.id}`} data method="delete">Delete Department</a>
-      <br></br>
       <a href="/stores">Back</a>
       <br></br>
       <h3>Item List</h3>
