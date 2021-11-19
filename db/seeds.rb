@@ -9,7 +9,7 @@
 require 'faker'
 
 # Item.destroy_all = messed up on intial set up following 11/17/21 lecture - Topics is an alias for items :)
-Topic.destroy_all
+# Topic.destroy_all
 Store.destroy_all
 
 strom = Store.create(name: 'Nordstrom')
@@ -17,8 +17,8 @@ tar = Store.create(name: 'Target')
 cees = Store.create(name: 'Macys')
 sco = Store.create(name: 'Costco')
 
-# # Making 5 random "faker" items for each store
-5.times do
+# # Making 4 random "faker" items for each store
+3.times do
   name1 = Faker::Hipster.words
   name2 = Faker::Hipster.sentences
   topic_name = "#{name1} #{name2}"
@@ -27,7 +27,7 @@ sco = Store.create(name: 'Costco')
   )
 end
 
-  5.times do
+  3.times do
     name1 = Faker::SlackEmoji.activity
     topic_name = "#{name1}"
     topic = tar.topics.create(
@@ -35,7 +35,7 @@ end
     )
   end
 
-  5.times do
+  3.times do
     name1 = Faker::Relationship.familial
     name2 = Faker::Hipster.sentences
     topic_name = "#{name1}#{name2}"
@@ -44,7 +44,7 @@ end
     )
   end
 
-  5.times do
+  3.times do
     name1 = Faker::Food.dish
     name2 = Faker::Food.fruits
     topic_name = "#{name1}#{name2}"
