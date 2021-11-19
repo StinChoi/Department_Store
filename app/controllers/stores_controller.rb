@@ -15,15 +15,11 @@ before_action :set_store, only:[:show, :edit, :update, :destroy]
 
   # posting "/stores"
   def create
-    # TODO: create a new store
-    # create store in memory
-    # TODO render new form with store (to show errors)
-    store = Store.new(store_params)
-    if (store.save)
-      redirect_to stores_path
-    else
+   Store.create(name: params[:store][:name])
+    # Returning back to the home page to see new deparment
+   redirect_to stores_path
   end
-end
+
 
 
   # (U)
@@ -42,17 +38,20 @@ end
   # put/patch '/stores/:id'
   def update
     # TODO updating stores
-    @store.update(params.require(:store).permit(:name))
-    redirect_to stores_path
+    @store.update(name: params[:store][:name])
+    redirect_to store_path
   end
   
   # (D)
   # delete 'stores/:id'
   def destroy
-    # TODO: deleting a specific store
-    # store = Store.find(params[:id])
     @store.destroy
     redirect_to stores_path
   end
 
+  private 
+  def set_store
+    @store = Store.find(params[:id])
+  end
+  
 end
